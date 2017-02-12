@@ -82,9 +82,9 @@ export default function mapCall(context: ParseContext, node: Call): Node {
 
   if (node.soak) {
     return new SoakedFunctionApplication(
-      line,
-      column,
-      start,
+      callee.line,
+      callee.column,
+      callee.start,
       end,
       raw,
       virtual,
@@ -94,9 +94,9 @@ export default function mapCall(context: ParseContext, node: Call): Node {
   }
 
   return new FunctionApplication(
-    line,
-    column,
-    start,
+    callee.line,
+    callee.column,
+    callee.start,
     end,
     raw,
     virtual,
